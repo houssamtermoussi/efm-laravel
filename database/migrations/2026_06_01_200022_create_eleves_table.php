@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('eleves', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('prenom');
+            $table->string('prenom')->unique();
             $table->foreignId('classe_id')->constrained('classes')->onDelete('cascade');
             $table->timestamps();
         });
