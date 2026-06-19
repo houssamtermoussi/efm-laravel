@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Eleve; 
+use App\Models\Classe; 
 
 class EleveController extends Controller
 {
@@ -35,7 +37,7 @@ class EleveController extends Controller
             'age'=>'required',
             'classe_id'=>'required'
         ]);
-        Eleve::create($request->all());
+        $eleve = Eleve::create($request->all());
         return redirect()->route('eleve.index')->with('success','Eleve ajouté avec succès');
     }
 
