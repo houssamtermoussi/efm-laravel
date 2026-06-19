@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('age')->nullable()->after('prenom');
 
             // Supprimer la contrainte unique sur prenom
-            $table->dropUnique(['prenom']);
+            $table->string('prenom', 255)->change();
         });
     }
 
